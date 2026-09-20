@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Harish P - Personal Expense Tracker</title>
+    <link rel="stylesheet" href="D:\Project\Day 08\Day06\static\styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Harish P</h1>
+            <p>Personal Expense Tracker 💰</p>
+        </header>
+
+        <nav>
+            <button onclick="showPage('dashboard')">Dashboard</button>
+            <button onclick="showPage('add')">Add Expense</button>
+            <button onclick="showPage('history')">History</button>
+        </nav>
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="page">
+
+            <div class="card total-card">
+                <h2>Total Expense</h2>
+                <h1 id="totalExpense">₹0</h1>
+            </div>
+
+
+            <div class="card">
+              <h2>Number of Expenses</h2>
+              <h1 id="expenseCount">0</h1>
+            </div>
+
+        </section>
+
+        <!-- Add Expense -->
+        <section id="add" class="page hidden">
+
+            <div class="form-box">
+                <h2>Add Expense</h2>
+
+                <form id="expenseForm">
+
+                    <label>Expense Name</label>
+                    <input
+                        type="text"
+                        id="expenseName"
+                        placeholder="Example: Lunch"
+                        required
+                    >
+
+                    <label>Amount</label>
+                    <input
+                        type="number"
+                        id="expenseAmount"
+                        placeholder="Example: 120"
+                        min="1"
+                        required
+                    >
+
+                    <label>Category</label>
+                    <select id="expenseCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Food">🍔 Food</option>
+                        <option value="Travel">🚌 Travel</option>
+                        <option value="Shopping">🛍️ Shopping</option>
+                        <option value="Education">📚 Education</option>
+                        <option value="Other">📦 Other</option>
+                    </select>
+
+                    <button type="submit" class="add-btn">
+                        + Add Expense
+                    </button>
+
+                </form>
+            </div>
+
+        </section>
+
+        <!-- History -->
+        <section id="history" class="page hidden">
+
+            <div class="history-box">
+                <h2>Expense History</h2>
+
+                <div id="expenseList"></div>
+
+                <div class="total-bottom">
+                    Total: ₹<span id="historyTotal">0</span>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="D:\Project\Day 08\Day06\static\script.js"></script>
+
+</body>
+</html>
